@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BORROW — Why Buy, If Borrow Can?</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section id="screen-home" class="screen active">
+      <header class="topbar">
+        <div class="brand">BORROW</div>
+        <button class="icon-btn" aria-label="Open profile" data-action="profile">◎</button>
+      </header>
+      <div class="hero">
+        <p class="eyebrow">TRUSTED RENTALS</p>
+        <h1>Borrow what you need.<br><span>Return what you don't.</span></h1>
+        <p class="muted">A simple marketplace for borrowing useful things from people around you.</p>
+        <div class="search"><span>⌕</span><input id="searchInput" placeholder="What do you want to borrow?"></div>
+      </div>
+      <div class="section-head"><h2>Explore</h2><button data-action="categories">See all</button></div>
+      <div class="categories">
+        <button>Electronics</button><button>Study</button><button>Sports</button><button>Tools</button>
+      </div>
+      <div class="section-head"><h2>Popular near you</h2><button>View all</button></div>
+      <div id="items" class="items"></div>
+      <nav class="bottom-nav">
+        <button class="nav active" data-action="home">Home</button>
+        <button class="nav" data-action="search">Search</button>
+        <button class="nav" data-action="add">List</button>
+        <button class="nav" data-action="profile">Profile</button>
+      </nav>
+    </section>
+
+    <section id="screen-profile" class="screen">
+      <header class="topbar"><button class="back" data-action="home">←</button><div class="brand">PROFILE</div><span></span></header>
+      <div class="profile-card"><div class="avatar">H</div><h1>Your Profile</h1><p class="muted">Build trust. Borrow confidently.</p></div>
+      <div class="menu-list">
+        <button>Trust score <strong>New</strong></button>
+        <button>My rentals <strong>0</strong></button>
+        <button>My listings <strong>0</strong></button>
+        <button>Settings <span>›</span></button>
+      </div>
+      <nav class="bottom-nav"><button class="nav" data-action="home">Home</button><button class="nav" data-action="search">Search</button><button class="nav" data-action="add">List</button><button class="nav active">Profile</button></nav>
+    </section>
+
+    <section id="screen-add" class="screen">
+      <header class="topbar"><button class="back" data-action="home">←</button><div class="brand">LIST AN ITEM</div><span></span></header>
+      <div class="form">
+        <p class="eyebrow">OWNER MODE</p><h1>Give something useful<br>another life.</h1>
+        <label>Item name<input placeholder="e.g. Sony headphones"></label>
+        <label>Category<select><option>Electronics</option><option>Study</option><option>Sports</option><option>Tools</option></select></label>
+        <label>Daily rental price<input type="number" placeholder="₹ 0"></label>
+        <button class="primary">Continue listing</button>
+      </div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
