@@ -71,6 +71,12 @@
 <div id="productDetail"></div>
 </section>
 
+
+<section id="screen-verifyItem" class="screen">
+<header class="topbar"><button class="back" data-action="product">←</button><div class="brand">VERIFICATION</div><span></span></header>
+<div id="verificationDetail" class="verification-page"></div>
+</section>
+
 <section id="screen-rental" class="screen">
 <header class="topbar"><button class="back" data-action="product">←</button><div class="brand">RENTAL DATES</div><span></span></header>
 <div class="form"><p class="eyebrow">CHOOSE YOUR DATES</p><h1>When do you<br>need it?</h1>
@@ -92,13 +98,13 @@
 
 <section id="screen-profile" class="screen">
 <header class="topbar"><button class="back" data-action="home">←</button><div class="brand">PROFILE</div><span></span></header>
-<div class="profile-card"><div class="avatar">H</div><h1>Your Profile</h1><p class="muted">Build trust. Borrow confidently.</p><div class="trust-pill">TRUST SCORE · <strong>NEW</strong></div></div>
+<div class="profile-card"><div class="avatar">H</div><h1>Your Profile</h1><p class="muted">Build trust. Borrow confidently.</p><div class="trust-pill">TRUST SCORE · <strong id="profileTrust">NEW</strong></div></div>
 <div class="menu-list"><button data-action="trust">Trust score <strong>New</strong></button><button>My rentals <strong id="rentalCount">0</strong></button><button data-action="owner">Owner mode <span>›</span></button><button>Settings <span>›</span></button></div>
 </section>
 
 <section id="screen-trust" class="screen">
 <header class="topbar"><button class="back" data-action="profile">←</button><div class="brand">TRUST SCORE</div><span></span></header>
-<div class="trust-page"><div class="score">NEW</div><h1>Your trust profile starts here.</h1><p class="muted">Complete rentals, return items on time and build a reliable BORROW history.</p><div class="trust-list"><div><span>✓</span> Verified phone</div><div><span>○</span> First successful rental</div><div><span>○</span> On-time returns</div><div><span>○</span> Owner verification</div></div></div>
+<div class="trust-page"><div class="score" id="trustBadge">NEW</div><h1>Your trust profile starts here.</h1><p class="muted">Complete rentals, return items on time and build a reliable BORROW history.</p><div class="trust-list"><div><span>✓</span> Verified phone</div><div><span>○</span> First successful rental</div><div><span>○</span> On-time returns</div><div><span>○</span> Owner verification</div></div><button class="primary" data-action="profile">Back to profile</button></div>
 </section>
 
 <section id="screen-owner" class="screen">
