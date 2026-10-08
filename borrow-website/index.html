@@ -1,61 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BORROW — Why Buy, If Borrow Can?</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>BORROW — Why Buy, If Borrow Can?</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="app-shell">
-    <section id="screen-home" class="screen active">
-      <header class="topbar">
-        <div class="brand">BORROW</div>
-        <button class="icon-btn" aria-label="Open profile" data-action="profile">◎</button>
-      </header>
-      <div class="hero">
-        <p class="eyebrow">TRUSTED RENTALS</p>
-        <h1>Borrow what you need.<br><span>Return what you don't.</span></h1>
-        <p class="muted">A simple marketplace for borrowing useful things from people around you.</p>
-        <div class="search"><span>⌕</span><input id="searchInput" placeholder="What do you want to borrow?"></div>
-      </div>
-      <div class="section-head"><h2>Explore</h2><button data-action="categories">See all</button></div>
-      <div class="categories">
-        <button>Electronics</button><button>Study</button><button>Sports</button><button>Tools</button>
-      </div>
-      <div class="section-head"><h2>Popular near you</h2><button>View all</button></div>
-      <div id="items" class="items"></div>
-      <nav class="bottom-nav">
-        <button class="nav active" data-action="home">Home</button>
-        <button class="nav" data-action="search">Search</button>
-        <button class="nav" data-action="add">List</button>
-        <button class="nav" data-action="profile">Profile</button>
-      </nav>
-    </section>
+<main class="app-shell">
 
-    <section id="screen-profile" class="screen">
-      <header class="topbar"><button class="back" data-action="home">←</button><div class="brand">PROFILE</div><span></span></header>
-      <div class="profile-card"><div class="avatar">H</div><h1>Your Profile</h1><p class="muted">Build trust. Borrow confidently.</p></div>
-      <div class="menu-list">
-        <button>Trust score <strong>New</strong></button>
-        <button>My rentals <strong>0</strong></button>
-        <button>My listings <strong>0</strong></button>
-        <button>Settings <span>›</span></button>
-      </div>
-      <nav class="bottom-nav"><button class="nav" data-action="home">Home</button><button class="nav" data-action="search">Search</button><button class="nav" data-action="add">List</button><button class="nav active">Profile</button></nav>
-    </section>
+<section id="screen-welcome" class="screen active">
+  <div class="welcome">
+    <p class="eyebrow">TRUST ABOVE EVERYTHING ELSE</p>
+    <div class="logo">BORROW</div>
+    <h1>Why buy,<br><span>if Borrow can?</span></h1>
+    <p class="muted">Borrow useful things from people around you. Simple, trusted and made for real life.</p>
+    <button class="primary" data-action="login">Get started</button>
+  </div>
+</section>
 
-    <section id="screen-add" class="screen">
-      <header class="topbar"><button class="back" data-action="home">←</button><div class="brand">LIST AN ITEM</div><span></span></header>
-      <div class="form">
-        <p class="eyebrow">OWNER MODE</p><h1>Give something useful<br>another life.</h1>
-        <label>Item name<input placeholder="e.g. Sony headphones"></label>
-        <label>Category<select><option>Electronics</option><option>Study</option><option>Sports</option><option>Tools</option></select></label>
-        <label>Daily rental price<input type="number" placeholder="₹ 0"></label>
-        <button class="primary">Continue listing</button>
-      </div>
-    </section>
-  </main>
-  <script src="app.js"></script>
+<section id="screen-login" class="screen">
+  <header class="topbar"><button class="back" data-action="welcome">←</button><div class="brand">BORROW</div><span></span></header>
+  <div class="form auth">
+    <p class="eyebrow">WELCOME BACK</p><h1>Let's get you<br>inside BORROW.</h1>
+    <label>Mobile number<div class="phone-row"><span>+91</span><input id="phoneInput" inputmode="numeric" maxlength="10" placeholder="10-digit mobile number"></div></label>
+    <button class="primary" data-action="otp">Send OTP</button>
+    <p class="fine">By continuing, you agree to BORROW's Terms and Privacy Policy.</p>
+  </div>
+</section>
+
+<section id="screen-otp" class="screen">
+  <header class="topbar"><button class="back" data-action="login">←</button><div class="brand">VERIFY</div><span></span></header>
+  <div class="form auth">
+    <p class="eyebrow">SECURE LOGIN</p><h1>Enter the<br>verification code.</h1>
+    <p class="muted">We've sent a demo OTP to <strong id="phonePreview">your number</strong>.</p>
+    <input id="otpInput" class="otp-input" inputmode="numeric" maxlength="4" placeholder="• • • •">
+    <button class="primary" data-action="mode">Verify & continue</button>
+    <button class="text-btn" data-action="login">Change number</button>
+  </div>
+</section>
+
+<section id="screen-mode" class="screen">
+  <div class="mode-page">
+    <p class="eyebrow">ONE ACCOUNT. TWO WAYS TO USE IT.</p>
+    <h1>How do you want to use BORROW?</h1>
+    <button class="mode-card" data-mode="borrower"><span class="mode-icon">↗</span><span><strong>Borrow something</strong><small>Find and rent useful things nearby.</small></span><b>→</b></button>
+    <button class="mode-card" data-mode="owner"><span class="mode-icon">＋</span><span><strong>List something</strong><small>Earn by sharing things you own.</small></span><b>→</b></button>
+  </div>
+</section>
+
+<section id="screen-home" class="screen">
+<header class="topbar"><div class="brand">BORROW</div><button class="icon-btn" aria-label="Open profile" data-action="profile">◎</button></header>
+<div class="hero"><p class="eyebrow">TRUSTED RENTALS</p><h1>Borrow what you need.<br><span>Return what you don't.</span></h1><p class="muted">A simple marketplace for borrowing useful things from people around you.</p>
+<div class="search"><span>⌕</span><input id="searchInput" placeholder="What do you want to borrow?"></div></div>
+<div class="section-head"><h2>Explore</h2><button data-action="categories">See all</button></div>
+<div class="categories"><button data-category="Electronics">Electronics</button><button data-category="Study">Study</button><button data-category="Sports">Sports</button><button data-category="Tools">Tools</button></div>
+<div class="section-head"><h2>Popular near you</h2><button data-action="search">View all</button></div>
+<div id="items" class="items"></div>
+<nav class="bottom-nav"><button class="nav active" data-action="home">Home</button><button class="nav" data-action="search">Search</button><button class="nav" data-action="add">List</button><button class="nav" data-action="profile">Profile</button></nav>
+</section>
+
+<section id="screen-search" class="screen">
+<header class="topbar"><button class="back" data-action="home">←</button><div class="brand">SEARCH</div><span></span></header>
+<div class="search large"><span>⌕</span><input id="searchPageInput" placeholder="Search items..."></div>
+<div id="searchResults" class="items"></div>
+</section>
+
+<section id="screen-product" class="screen">
+<header class="topbar"><button class="back" data-action="home">←</button><div class="brand">ITEM</div><span></span></header>
+<div id="productDetail"></div>
+</section>
+
+<section id="screen-rental" class="screen">
+<header class="topbar"><button class="back" data-action="product">←</button><div class="brand">RENTAL DATES</div><span></span></header>
+<div class="form"><p class="eyebrow">CHOOSE YOUR DATES</p><h1>When do you<br>need it?</h1>
+<label>Start date<input id="startDate" type="date"></label><label>Return date<input id="endDate" type="date"></label>
+<div class="summary"><span>Estimated rental</span><strong id="rentalTotal">₹0</strong></div>
+<button class="primary" data-action="checkout">Continue to checkout</button></div>
+</section>
+
+<section id="screen-checkout" class="screen">
+<header class="topbar"><button class="back" data-action="rental">←</button><div class="brand">CHECKOUT</div><span></span></header>
+<div class="form"><p class="eyebrow">FINAL STEP</p><h1>Review your<br>rental.</h1><div id="checkoutSummary" class="checkout-card"></div>
+<label>Meetup preference<select><option>Meet at owner's location</option><option>Public meetup nearby</option></select></label>
+<button class="primary" data-action="confirm">Confirm rental</button></div>
+</section>
+
+<section id="screen-confirmation" class="screen">
+<div class="success"><div class="check">✓</div><p class="eyebrow">RENTAL CONFIRMED</p><h1>You're all set.</h1><p class="muted">Your rental request has been recorded. We'll keep the handover simple and trusted.</p><div class="confirmation-code">BORROW · #BRW<span id="confirmCode"></span></div><button class="primary" data-action="home">Back to home</button></div>
+</section>
+
+<section id="screen-profile" class="screen">
+<header class="topbar"><button class="back" data-action="home">←</button><div class="brand">PROFILE</div><span></span></header>
+<div class="profile-card"><div class="avatar">H</div><h1>Your Profile</h1><p class="muted">Build trust. Borrow confidently.</p><div class="trust-pill">TRUST SCORE · <strong>NEW</strong></div></div>
+<div class="menu-list"><button data-action="trust">Trust score <strong>New</strong></button><button>My rentals <strong id="rentalCount">0</strong></button><button data-action="owner">Owner mode <span>›</span></button><button>Settings <span>›</span></button></div>
+</section>
+
+<section id="screen-trust" class="screen">
+<header class="topbar"><button class="back" data-action="profile">←</button><div class="brand">TRUST SCORE</div><span></span></header>
+<div class="trust-page"><div class="score">NEW</div><h1>Your trust profile starts here.</h1><p class="muted">Complete rentals, return items on time and build a reliable BORROW history.</p><div class="trust-list"><div><span>✓</span> Verified phone</div><div><span>○</span> First successful rental</div><div><span>○</span> On-time returns</div><div><span>○</span> Owner verification</div></div></div>
+</section>
+
+<section id="screen-owner" class="screen">
+<header class="topbar"><button class="back" data-action="profile">←</button><div class="brand">OWNER MODE</div><span></span></header>
+<div class="owner-hero"><p class="eyebrow">YOUR SPACE</p><h1>Turn unused things<br>into useful things.</h1><button class="primary" data-action="add">＋ List an item</button></div>
+<div class="owner-grid"><div><strong>0</strong><small>Active listings</small></div><div><strong>₹0</strong><small>Total earnings</small></div><div><strong>0</strong><small>Rentals</small></div></div>
+<div class="menu-list"><button>My listings <span>›</span></button><button>Rental management <span>›</span></button><button>Earnings & payments <span>›</span></button></div>
+</section>
+
+<section id="screen-add" class="screen">
+<header class="topbar"><button class="back" data-action="owner">←</button><div class="brand">LIST AN ITEM</div><span></span></header>
+<div class="form"><p class="eyebrow">OWNER MODE</p><h1>Give something useful<br>another life.</h1>
+<label>Item name<input id="itemName" placeholder="e.g. Sony headphones"></label><label>Category<select id="itemCategory"><option>Electronics</option><option>Study</option><option>Sports</option><option>Tools</option></select></label><label>Daily rental price<input id="itemPrice" type="number" placeholder="₹ 0"></label>
+<button class="primary" data-action="saveListing">Continue listing</button></div>
+</section>
+
+</main>
+<script src="app.js"></script>
 </body>
 </html>
